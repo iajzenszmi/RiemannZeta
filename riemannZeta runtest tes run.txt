@@ -1,0 +1,41 @@
+ian@ian-Latitude-E7440:~$ cat riemannZeta.py
+import numpy as np
+import matplotlib.pyplot as plt
+from scipy.special import zeta
+
+# Define the Riemann Zeta function for real inputs
+def riemann_zeta(s):
+    return zeta(s, 1)
+
+# Set up a range of s values for which to compute the Zeta function
+s_values = np.linspace(2, 30, 200)
+zeta_values = riemann_zeta(s_values)
+
+# Plot the Riemann Zeta function
+plt.figure(figsize=(10, 6))
+plt.plot(s_values, zeta_values, label=r'Riemann $\zeta(s)$')
+plt.title('Riemann Zeta Function')
+plt.xlabel('s')
+plt.ylabel(r'$\zeta(s)$')
+plt.grid(True)
+plt.legend()
+plt.show()
+ian@ian-Latitude-E7440:~$ nano riemannzeta2.py
+ian@ian-Latitude-E7440:~$ 
+ian@ian-Latitude-E7440:~$ nano riemannZeta3
+ian@ian-Latitude-E7440:~$ ipython3 riemannZeta3.py
+/usr/lib/python3/dist-packages/scipy/__init__.py:146: UserWarning: A NumPy version >=1.17.3 and <1.25.0 is required for this version of SciPy (detected version 1.26.4
+  warnings.warn(f"A NumPy version >={np_minversion} and <{np_maxversion}"
+zeta(2.0) = 1.6449340668482264
+ian@ian-Latitude-E7440:~$ cat riemannZeta3.py
+from scipy.special import zeta
+
+def zeta_function(s):
+    return zeta(s)
+
+# Example usage
+s = 2.0
+result = zeta_function(s)
+print(f"zeta({s}) = {result}")
+ian@ian-Latitude-E7440:~$ 
+
